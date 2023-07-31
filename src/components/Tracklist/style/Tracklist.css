@@ -1,0 +1,29 @@
+.tracklist {
+  list-style: none;
+}
+.tracklist__item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+}
+.tracklist__item:hover {
+  cursor: pointer;
+  background-color: rgba(242, 242, 242, 0.3);
+}
+.tracklist__album {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/src/assets/disk.svg);
+}
+.tracklist__album-img {
+  width: 30px;
+  height: 30px;
+}
+.tracklist__title {
+  display: flex;
+  gap: 5px;
+}/*# sourceMappingURL=Tracklist.css.map */

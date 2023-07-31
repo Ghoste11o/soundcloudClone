@@ -1,0 +1,69 @@
+.header {
+  background-color: #333333 !important;
+}
+.header__input {
+  width: 100%;
+}
+.header__toolbar {
+  height: 100%;
+}
+.header__logo-wrap {
+  max-width: 104px;
+  max-height: 65px;
+}
+.header__logo {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.header__logo:hover {
+  cursor: pointer;
+}
+.header__logo-link {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  width: 104px;
+  height: 65px;
+}
+.header__logo-link:hover {
+  background-color: black;
+}
+.header__search {
+  width: 100%;
+}
+.header__search-icon {
+  color: rgba(0, 0, 0, 0.5);
+}
+.header__auth {
+  width: 65px;
+}
+.header__auth-icon {
+  color: whitesmoke;
+  width: 40px !important;
+  height: 40px !important;
+}
+.header__topmenu {
+  display: flex;
+  margin-right: 15px;
+}
+.header__topmenu-item {
+  width: 104px;
+  height: 65px;
+  border-right: 1px solid black;
+}
+.header__topmenu-item:hover {
+  background-color: black;
+}
+.header__topmenu-item:first-child {
+  border-left: 1px solid black;
+}
+.header__topmenu-link {
+  color: whitesmoke;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=Header.css.map */
