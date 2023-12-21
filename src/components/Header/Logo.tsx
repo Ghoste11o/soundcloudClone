@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-import { ILogo } from "./interface/Header";
 import "./style/Header.scss";
 
 const url = "/src/assets/logo.svg"
 
-export const Logo = (_interface: ILogo) => {
+export const Logo = () => {
   return (
     <div className="header__logo-wrap">
       <Link className="header__logo-link" to="/">

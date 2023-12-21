@@ -1,8 +1,6 @@
-import { ITracklistProps, ITracklistItem } from "./interface/Tracklist";
 import "./style/Tracklist.scss";
-import { TracklistItem } from "./TracklistItem";
 
-export const Playlist: Array<ITracklistItem> = [
+const Playlist = [
   {
     url: "https://music.youtube.com/watch?v=O_BEFyNNIvM",
     title: "I Got A Name",
@@ -26,20 +24,23 @@ export const Playlist: Array<ITracklistItem> = [
   },
 ];
 
-export const Tracklist = (_props: ITracklistProps, _track: any) => {
+export const Tracklist = () => {
   return (
-      <ul className="tracklist">
-        {Playlist.map(track => {
-          return (
-            <TracklistItem
-              title={track.title}
-              author={track.author}
-              thumbnail={track.thumbnail}
-              url={track.url}
-              id={track.id}
-            />
-          )
-        })}
-      </ul>
+    <ul className="tracklist">
+      {Playlist.map(track => {
+        return (
+          <li className="tracklist__item">
+            <div className="tracklist__album">
+              <img className="tracklist__album-img" src={track.thumbnail} />
+            </div>
+            <p className="tracklist__title">
+              <span>{track.id}.</span>
+              <span>{track.author} -</span>
+              <span>{track.title}</span>
+            </p>
+          </li>
+        )
+      })}
+    </ul>
   );
 };

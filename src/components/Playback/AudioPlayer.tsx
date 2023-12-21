@@ -4,9 +4,15 @@ import { useRef, useState } from "react";
 import { AudioDetails } from "./AudioDetails";
 import { PlayerControls } from "./PlayerControls";
 import { Container, Toolbar } from "@mui/material";
-import { IProps } from "./interface/Playback";
 
-export const AudioPlayer = ({ url, title, author, thumbnail }: IProps) => {
+type Props = {
+  url: string,
+  title: string,
+  author: string,
+  thumbnail: string,
+};
+
+export const AudioPlayer = ({ url, title, author, thumbnail }: Props) => {
   const playerRef = useRef<ReactPlayer | null>(null);
 
   const [playing, setPlaying] = useState<boolean>(false);

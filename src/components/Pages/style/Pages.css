@@ -4,6 +4,7 @@
   padding-top: 90px;
 }
 
-.about__title {
+.about__title,
+.about__text {
   text-align: center;
 }/*# sourceMappingURL=Pages.css.map */

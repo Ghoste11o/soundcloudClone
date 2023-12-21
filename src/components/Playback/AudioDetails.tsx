@@ -1,4 +1,9 @@
-import { Props } from "./interface/Playback";
+type Props = {
+  title: string,
+  author: string,
+  thumbnail: string,
+  id: number,
+};
 
 export const AudioDetails = ({ title, author, thumbnail }: Props) => {
   return (

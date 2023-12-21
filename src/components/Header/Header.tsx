@@ -10,7 +10,7 @@ export const Header = () => {
     <AppBar className="header">
       <Container>
         <Toolbar className="header__toolbar">
-          <Logo url={""} />
+          <Logo />
           <TopMenu />
           <SearchAppBar />
           <Auth />
