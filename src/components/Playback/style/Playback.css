@@ -17,6 +17,9 @@
   align-items: center;
   gap: 10px;
   margin-left: 20px;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 30%;
 }
 .playback__album-wrap {
   width: 30px;

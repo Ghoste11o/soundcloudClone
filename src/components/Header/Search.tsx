@@ -1,4 +1,4 @@
-import "./style/Header.scss";
+import "./style/Header.css";
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';

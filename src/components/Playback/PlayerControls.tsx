@@ -3,9 +3,9 @@ import { CiPlay1, CiPause1 } from "react-icons/ci";
 import { VscMute, VscUnmute } from "react-icons/vsc";
 import { ImLoop } from "react-icons/im";
 import { Duration } from "./Duration";
-import "./style/Playback.scss";
+import "./style/Playback.css";
 
-type Props = {
+interface IProps {
   playerRef: any,
   playing: boolean,
   loop: boolean,
@@ -33,7 +33,7 @@ export const PlayerControls = ({
   handlePause,
   handleVolumeChange,
   toggleMute,
-}: Props) => {
+}: IProps) => {
   const [played, setPlayed] = useState<number>(0);
   const [seeking, setSeeking] = useState<boolean>(false);
   const playPauseButtonRef = useRef<HTMLButtonElement>(null);

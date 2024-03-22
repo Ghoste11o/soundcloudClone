@@ -1,21 +1,15 @@
-import "./style/Playback.scss";
+import "./style/Playback.css";
 import ReactPlayer from "react-player";
 import { useRef, useState } from "react";
-import { AudioDetails } from "./AudioDetails";
 import { PlayerControls } from "./PlayerControls";
 import { Container, Toolbar } from "@mui/material";
+import { ITrack } from "../Tracklist/Tracklist";
+import diskImg from "../../assets/disk.svg";
 
-type Props = {
-  url: string,
-  title: string,
-  author: string,
-  thumbnail: string,
-};
-
-export const AudioPlayer = ({ url, title, author, thumbnail }: Props) => {
+export const AudioPlayer = ({ url, thumbnail, author, title }: ITrack) => {
   const playerRef = useRef<ReactPlayer | null>(null);
 
-  const [playing, setPlaying] = useState<boolean>(false);
+  const [playing, setPlaying] = useState<boolean>(true);
   const [muted, setMuted] = useState<boolean>(false);
   const [volume, setVolume] = useState<number>(0.5);
   const [progress, setProgress] = useState<number>(0);
@@ -84,13 +78,28 @@ export const AudioPlayer = ({ url, title, author, thumbnail }: Props) => {
               handleVolumeChange={handleVolumeChange}
             />
           </div>
-          <div>
-            <AudioDetails
-              title={title}
-              author={author}
-              thumbnail={thumbnail} 
-              id={0}            
-            />
+          <div className="playback__details">
+            {thumbnail ? (
+              <div className="playback__album-wrap">
+                <img className="playback__album-img" src={thumbnail} />
+              </div>
+            ) : (
+              <div className="playback__album-wrap">
+                <img className="playback__album-img" src={diskImg} />
+              </div>
+            )}
+            <p className="playback__info">
+              {author ? (
+                <span className="playback__author">{author}</span>
+              ) : (
+                <span className="playback__author">Artist</span>
+              )}
+              {title ? (
+                <span className="playback__title">{title}</span>
+              ) : (
+                <span className="playback__title">Title</span>
+              )}
+            </p>
           </div>
         </Toolbar>
       </Container>

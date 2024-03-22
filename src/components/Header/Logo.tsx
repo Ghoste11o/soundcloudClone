@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./style/Header.scss";
+import "./style/Header.css";
 
 const url = "/src/assets/logo.svg"
 

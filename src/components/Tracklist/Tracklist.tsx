@@ -1,6 +1,22 @@
-import "./style/Tracklist.scss";
+import "./style/Tracklist.css";
+import { useDispatch } from 'react-redux';
+import { selectTrack } from '../../Redux/playerSlice';
+import diskImg from "../../assets/disk.svg";
 
-const Playlist = [
+export interface ITracklistState {
+  list: ITrack[];
+  currentTrack: ITrack | null;
+};
+
+export interface ITrack {
+  url: string,
+  title: string,
+  author: string,
+  thumbnail: string,
+  id: number,
+};
+
+export const Playlist: Array<ITrack> = [
   {
     url: "https://music.youtube.com/watch?v=O_BEFyNNIvM",
     title: "I Got A Name",
@@ -22,20 +38,35 @@ const Playlist = [
     thumbnail: "/src/assets/albumImage3.jpg",
     id: 3,
   },
+  {
+    url: "https://music.youtube.com/watch?v=lYBUbBu4W08",
+    title: "Never Gonna Give You Up",
+    author: "Rick Astley",
+    thumbnail: "",
+    id: 4,
+  },
 ];
 
-export const Tracklist = () => {
+const Tracklist = () => {
+  const dispatch = useDispatch();
+
+  const handleTrackClick = (track: ITrack) => dispatch(selectTrack(track));
+
   return (
     <ul className="tracklist">
       {Playlist.map(track => {
         return (
-          <li className="tracklist__item">
+          <li key={track.id} value={track.id} className="tracklist__item" onClick={() => handleTrackClick(track)}>
             <div className="tracklist__album">
-              <img className="tracklist__album-img" src={track.thumbnail} />
+              {track.thumbnail ? (
+                  <img className="tracklist__album-img" src={track.thumbnail} />
+                ) : (
+                  <img className="tracklist__album-img" src={diskImg} />
+              )}
             </div>
             <p className="tracklist__title">
-              <span>{track.id}.</span>
-              <span>{track.author} -</span>
+              <span>{track.id}. </span>
+              <span>{track.author} - </span>
               <span>{track.title}</span>
             </p>
           </li>
@@ -44,3 +75,5 @@ export const Tracklist = () => {
     </ul>
   );
 };
+
+export default Tracklist;

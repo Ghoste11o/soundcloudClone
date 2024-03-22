@@ -1,4 +1,4 @@
-import "./style/Playback.scss"
+import "./style/Playback.css"
 
 export const Duration = ({ seconds }: { seconds: number }) => {
   return (

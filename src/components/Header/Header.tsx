@@ -1,4 +1,4 @@
-import "./style/Header.scss";
+import "./style/Header.css";
 import { AppBar, Container, Toolbar } from "@mui/material";
 import { Auth } from "./Auth";
 import { SearchAppBar } from "./Search";
