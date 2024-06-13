@@ -1,2 +1,2 @@
 **SoundCloudClone**
->*React, Redux TK, TypeScript, SCSS, Vite.*
+>*React, Redux TK, TypeScript, HTML, SCSS, Vite.*
